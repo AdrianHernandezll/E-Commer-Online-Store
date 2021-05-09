@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Gugi&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --ligth-gray: #2b3032a1;
+  --primary-color: #45ccb8;
+  --border: #2b303218;
+  --text-color: #ff686b;
+  --gugi:font-family: 'Gugi', cursive;
+  --roboto:font-family: 'Roboto', sans-serif;
+  --sofia: "Sofia",cursive;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+p {
+  color: var(--primary-color);
+}
