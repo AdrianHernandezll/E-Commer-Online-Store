@@ -11,7 +11,7 @@ body {
 
 .navbar-brand {
   font-size: 2rem;
-  color: black;
+  color: #76d300;
 }
 .nav-link {
   margin-right: 10px;
@@ -84,7 +84,29 @@ body {
 }
 
 .card {
-  width: 300px;
-  margin-top: 15px;
+  margin-top: 20px;
   background: #eeeeee;
+}
+.card-body h5 {
+  text-transform: capitalize;
+  font-weight: bold;
+  color: #76d300;
+}
+.card-body p {
+  font-size: 18px;
+  font-weight: 500;
+}
+.card-body a {
+  text-decoration: none;
+  color: #ffffff;
+  background: #76d300;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+}
+.card-body a:hover {
+  background: #cbff6af1;
+}
+.list-group ul li a {
+  font-weight: 700;
 }
