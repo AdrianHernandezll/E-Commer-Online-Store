@@ -16,7 +16,39 @@
   <body>
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">My Store</a>
+        <a class="navbar-brand" href="index.html">My Store</a>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img src="src/img/cart.jpeg" alt="" />
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <table id="lista-carrito" class="table">
+              <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>Nombre</th>
+                  <th>Precio</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+
+            <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block"
+              >Vaciar Carrito</a
+            >
+            <a href="#" id="procesar-pedido" class="btn btn-danger btn-block"
+              >Procesar Compra</a
+            >
+          </ul>
+        </li>
         <button
           class="navbar-toggler"
           type="button"
@@ -25,18 +57,18 @@
           aria-controls="navbarSupportedContent"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav m-auto my-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Inicio</a>
+              <a class="nav-link active" href="index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Tienda</a>
+              <a class="nav-link" href="tienda.html">Tienda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
+              <a class="nav-link" href="nosotros.html">Contacto</a>
             </li>
           </ul>
           <form class="d-flex">
@@ -71,7 +103,7 @@
 
     <!-- Section  -->
     <div class="section">
-      <div class="container py-5">
+      <div class="container py-5" id="lista-productos">
         <div class="row text-center">
           <h2>Productos</h2>
         </div>
@@ -98,8 +130,10 @@
                     <li class="list-group-item">Precio: $230.000</li>
                   </ul>
                   <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
+                    <a href="#" class="card-link agregar-carrito" data-id="1"
+                      >Comprar Ahora</a
+                    >
+                    <a href="tienda.html" class="card-link">Ver Más</a>
                   </div>
                 </div>
               </div>
@@ -123,8 +157,10 @@
                     <li class="list-group-item">Precios: $130.000</li>
                   </ul>
                   <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
+                    <a href="#" class="card-link agregar-carrito" data-id="2"
+                      >Comprar Ahora</a
+                    >
+                    <a href="tienda.html" class="card-link">Ver Más</a>
                   </div>
                 </div>
               </div>
@@ -148,8 +184,10 @@
                     <li class="list-group-item">Precio: $98.000</li>
                   </ul>
                   <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
+                    <a href="#" class="card-link agregar-carrito" data-id="3"
+                      >Comprar Ahora</a
+                    >
+                    <a href="tienda.html" class="card-link">Ver Más</a>
                   </div>
                 </div>
               </div>
@@ -173,8 +211,10 @@
                     <li class="list-group-item">Precio: $75.000</li>
                   </ul>
                   <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
+                    <a href="#" class="card-link agregar-carrito" data-id="4"
+                      >Comprar Ahora</a
+                    >
+                    <a href="tienda.html" class="card-link">Ver Más</a>
                   </div>
                 </div>
               </div>
@@ -198,8 +238,13 @@
                     <li class="list-group-item">Precio: $190.000</li>
                   </ul>
                   <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
+                    <a
+                      href="tienda.html"
+                      class="card-link agregar-carrito"
+                      data-id="5"
+                      >Comprar Ahora</a
+                    >
+                    <a href="tienda.html" class="card-link">Ver Más</a>
                   </div>
                 </div>
               </div>
@@ -223,8 +268,10 @@
                     <li class="list-group-item">Precio: $110.000</li>
                   </ul>
                   <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
+                    <a href="#" class="card-link agregar-carrito" data-id="6"
+                      >Comprar Ahora</a
+                    >
+                    <a href="tienda.html" class="card-link">Ver Más</a>
                   </div>
                 </div>
               </div>
@@ -239,6 +286,11 @@
       src="https://kit.fontawesome.com/0729072db7.js"
       crossorigin="anonymous"
     ></script>
+    <!-- JS Local -->
+    <script src="src/js/carrito.js"></script>
+    <script src="src/js/compra.js"></script>
+    <!-- <script src="src/js/swrich.js"></script> -->
+
     <!-- PopperJS -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"

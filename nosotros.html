@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style/style.css" />
+    <title>E-Commerce</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">My Store</a>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img src="src/img/cart.jpeg" alt="" />
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <table id="lista-carrito" class="table">
+              <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>Nombre</th>
+                  <th>Precio</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+
+            <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block"
+              >Vaciar Carrito</a
+            >
+            <a href="#" id="procesar-pedido" class="btn btn-danger btn-block"
+              >Procesar Compra</a
+            >
+          </ul>
+        </li>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav m-auto my-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tienda.html">Tienda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nosotros.html">Contacto</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="px-3 search"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Buscar"
+            />
+            <button class="btn0" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- Main  -->
+    <div class="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <h1>LA JUGADA DEFINITIVA</h1>
+            <p>
+              No puedes deshacer lo que ya has hecho, pero sí puedes
+              enfrentarlo.
+            </p>
+            <button class="btn1">Ver más</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section  -->
+    <div class="section">
+      <div class="container py-5">
+        <div class="row text-center">
+          <h2>Productos</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 m-auto">
+            <div class="row">
+              <div class="col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="src/img/acer.jpg"
+                    class="card-img-top"
+                    alt="laptop"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">acer predator helios300</h5>
+                    <p class="card-text">
+                      Comienza a jugar con todo lo que necesitas para arrasar a
+                      los rivales en una pantalla increíblemente.
+                    </p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Pantalla 15.6 Pulgadas</li>
+                    <li class="list-group-item">16 GB DDR4 + 512GB SSD</li>
+                    <li class="list-group-item">Precio: $230.000</li>
+                  </ul>
+                  <div class="card-body m-auto">
+                    <a href="tienda.html" class="card-link">Comprar Ahora</a>
+                    <a href="tienda.html" class="card-link">Ver Más</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="src/img/dell.jpg"
+                    class="card-img-top"
+                    alt="laptop"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Dell Latitude D455</h5>
+                    <p class="card-text">
+                      Comienza a jugar con todo lo que necesitas para arrasar a
+                      los rivales en una pantalla increíblemente.
+                    </p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Pantalla 14 Pulgadas</li>
+                    <li class="list-group-item">8 GB DDR4 + 1TB DISCO</li>
+                    <li class="list-group-item">Precios: $130.000</li>
+                  </ul>
+                  <div class="card-body m-auto">
+                    <a href="tienda.html" class="card-link">Comprar Ahora</a>
+                    <a href="tienda.html" class="card-link">Ver Más</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="src/img/lenovo.jpg"
+                    class="card-img-top"
+                    alt="laptop"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">lenovo thinkpad s345</h5>
+                    <p class="card-text">
+                      Comienza a jugar con todo lo que necesitas para arrasar a
+                      los rivales en una pantalla increíblemente.
+                    </p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Pantalla 14 Pulgadas</li>
+                    <li class="list-group-item">4GB DDR4 + 1TB DISCO</li>
+                    <li class="list-group-item">Precio: $98.000</li>
+                  </ul>
+                  <div class="card-body m-auto">
+                    <a href="tienda.html" class="card-link">Comprar Ahora</a>
+                    <a href="tienda.html" class="card-link">Ver Más</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="src/img/advance.jpg"
+                    class="card-img-top"
+                    alt="laptop"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">lenovo 2 en 1 X350</h5>
+                    <p class="card-text">
+                      Nuestra notebook más ligera y delgada vuelve completamente
+                      renovada por dentro.
+                    </p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Pantalla 11.6 Pulgadas</li>
+                    <li class="list-group-item">3GB DDR3 + 32GB SSD</li>
+                    <li class="list-group-item">Precio: $75.000</li>
+                  </ul>
+                  <div class="card-body m-auto">
+                    <a href="tienda.html" class="card-link">Comprar Ahora</a>
+                    <a href="tienda.html" class="card-link">Ver Más</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="src/img/apple.jpg"
+                    class="card-img-top"
+                    alt="laptop"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">MacBook Air M1</h5>
+                    <p class="card-text">
+                      Nuestra notebook más ligera y delgada vuelve completamente
+                      renovada por dentro.
+                    </p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Pantalla 13.3 Pulgadas</li>
+                    <li class="list-group-item">8GB DDR4 + 128GB SSD</li>
+                    <li class="list-group-item">Precio: $190.000</li>
+                  </ul>
+                  <div class="card-body m-auto">
+                    <a href="tienda.html" class="card-link">Comprar Ahora</a>
+                    <a href="tienda.html" class="card-link">Ver Más</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="src/img/hp1.jpg"
+                    class="card-img-top"
+                    alt="laptop"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">HP omen 15c24</h5>
+                    <p class="card-text">
+                      Nuestra notebook más ligera y delgada vuelve completamente
+                      renovada por dentro.
+                    </p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Pantalla 13.3 Pulgadas</li>
+                    <li class="list-group-item">8GB DDR4 + 256GB SSD</li>
+                    <li class="list-group-item">Precio: $110.000</li>
+                  </ul>
+                  <div class="card-body m-auto">
+                    <a href="tienda.html" class="card-link">Comprar Ahora</a>
+                    <a href="tienda.html" class="card-link">Ver Más</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/0729072db7.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- PopperJS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

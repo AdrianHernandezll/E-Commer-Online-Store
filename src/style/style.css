@@ -9,10 +9,6 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 /*----------- NavBar Responsive--------------- */
-.navbar-toggler span {
-  border: 1px solid #eeeeee;
-}
-
 .navbar-brand {
   font-size: 2rem;
   color: #76d300;
@@ -22,8 +18,12 @@ body {
   margin-left: 10px;
   color: black;
   text-transform: uppercase;
+  display: inline;
 }
-.nav-link:hover {
+.nav-link img {
+  width: 40px;
+}
+.nav-link .nav-link:hover {
   color: #cbff6af1;
   transition: all 0.5s;
 }
@@ -79,7 +79,20 @@ body {
 .main .btn1:hover {
   background-color: #cbff6af1;
 }
+/* Dropbown menu */
+.dropdown-menu {
+  width: 250px;
+  height: 220px;
+}
+.dropdown-menu a {
+  width: 100%;
+  margin-top: 10px;
+}
 
+.navbar-toggler-icon i {
+  align-items: center;
+  margin-top: 7px;
+}
 /* SECTION CARDS */
 
 .section {
