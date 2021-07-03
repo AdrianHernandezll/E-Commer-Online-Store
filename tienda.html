@@ -10,39 +10,62 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/0729072db7.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="src/style/style.css" />
     <title>E-Commerce</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav
+      class="
+        navbar
+        sticky-top
+        navbar-expand-lg navbar-light
+        bg-light
+        scrolling-navbar
+      "
+    >
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">My Store</a>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-              <li class="nav-item dropdown">
-                  <img src="src/img/cart.jpeg" class="nav-link dropdown-toggle img-fluid" height="70px"
-                      width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-                      aria-expanded="false"></img>
-                  <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
-                      <table id="lista-carrito" class="table">
-                          <thead>
-                              <tr>
-                                  <th>Imagen</th>
-                                  <th>Nombre</th>
-                                  <th>Precio</th>
-                                  <th></th>
-                              </tr>
-                          </thead>
-                          <tbody></tbody>
-                      </table>
+        <a class="navbar-brand" href="index.html">My Store</a>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img src="src/img/cart.jpeg" alt="" />
+          </a>
+          <ul
+            id="carrito"
+            class="dropdown-menu"
+            aria-labelledby="navbarDropdown"
+          >
+            <table id="lista-carrito" class="table">
+              <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>Nombre</th>
+                  <th>Precio</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
 
-                      <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
-                      <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
-                          Compra</a>
-                  </div>
-              </li>
+            <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block"
+              >Vaciar Carrito</a
+            >
+            <a href="#" id="procesar-pedido" class="btn btn-danger btn-block"
+              >Procesar Compra</a
+            >
           </ul>
-        </div>
+        </li>
         <button
           class="navbar-toggler"
           type="button"
@@ -51,7 +74,7 @@
           aria-controls="navbarSupportedContent"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon bg-black"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav m-auto my-2 mb-lg-0">
@@ -81,7 +104,7 @@
     </nav>
     <!-- Section  -->
     <div class="section">
-      <div class="container py-5">
+      <div class="container py-5" id="lista-productos">
         <div class="row text-center">
           <h2>Laptops</h2>
         </div>
@@ -105,10 +128,14 @@
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">Pantalla 15.6 Pulgadas</li>
                     <li class="list-group-item">16 GB DDR4 + 512GB SSD</li>
-                    <li class="list-group-item">Precio: $230.000</li>
+                    <li class="list-group-item precio">
+                      Precio:<span>$230.000</span>
+                    </li>
                   </ul>
                   <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
+                    <a href="#" class="card-link agregar-carrito" data-id="1"
+                      >Comprar Ahora</a
+                    >
                     <a href="#" class="card-link">Ver Más</a>
                   </div>
                 </div>
@@ -130,10 +157,14 @@
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">Pantalla 14 Pulgadas</li>
                     <li class="list-group-item">8 GB DDR4 + 1TB DISCO</li>
-                    <li class="list-group-item">Precios: $130.000</li>
+                    <li class="list-group-item precio">
+                      Precio:<span>$130.000</span>
+                    </li>
                   </ul>
                   <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
+                    <a href="#" class="card-link agregar-carrito" data-id="2"
+                      >Comprar Ahora</a
+                    >
                     <a href="#" class="card-link">Ver Más</a>
                   </div>
                 </div>
@@ -155,10 +186,14 @@
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">Pantalla 14 Pulgadas</li>
                     <li class="list-group-item">4GB DDR4 + 1TB DISCO</li>
-                    <li class="list-group-item">Precio: $98.000</li>
+                    <li class="list-group-item precio">
+                      Precio:<span>$98.000</span>
+                    </li>
                   </ul>
                   <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
+                    <a href="#" class="card-link agregar-carrito" data-id="3"
+                      >Comprar Ahora</a
+                    >
                     <a href="#" class="card-link">Ver Más</a>
                   </div>
                 </div>
@@ -180,10 +215,14 @@
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">Pantalla 11.6 Pulgadas</li>
                     <li class="list-group-item">3GB DDR3 + 32GB SSD</li>
-                    <li class="list-group-item">Precio: $75.000</li>
+                    <li class="list-group-item precio">
+                      Precio:<span>$75.000</span>
+                    </li>
                   </ul>
                   <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
+                    <a href="#" class="card-link agregar-carrito" data-id="4"
+                      >Comprar Ahora</a
+                    >
                     <a href="#" class="card-link">Ver Más</a>
                   </div>
                 </div>
@@ -205,10 +244,14 @@
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">Pantalla 13.3 Pulgadas</li>
                     <li class="list-group-item">8GB DDR4 + 128GB SSD</li>
-                    <li class="list-group-item">Precio: $190.000</li>
+                    <li class="list-group-item precio">
+                      Precio:<span>$190.000</span>
+                    </li>
                   </ul>
                   <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
+                    <a href="#" class="card-link agregar-carrito" data-id="5"
+                      >Comprar Ahora</a
+                    >
                     <a href="#" class="card-link">Ver Más</a>
                   </div>
                 </div>
@@ -230,10 +273,97 @@
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">Pantalla 13.3 Pulgadas</li>
                     <li class="list-group-item">8GB DDR4 + 256GB SSD</li>
-                    <li class="list-group-item">Precio: $110.000</li>
+                    <li class="list-group-item precio">
+                      Precio:<span>$110.000</span>
+                    </li>
                   </ul>
                   <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
+                    <a href="#" class="card-link agregar-carrito" data-id="6"
+                      >Comprar Ahora</a
+                    >
+                    <a href="#" class="card-link">Ver Más</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="src/img/huawei.jpg"
+                    class="card-img-top"
+                    alt="laptop"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Huawei MediaPad</h5>
+                    <p class="card-text">
+                      Nuestra notebook más ligera y delgada vuelve completamente
+                      renovada por dentro.
+                    </p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Pantalla 13.9 Pulgadas</li>
+                    <li class="list-group-item">8GB DDR4 + 256GB SSD</li>
+                    <li class="list-group-item precio">
+                      Precio:<span>$128.000</span>
+                    </li>
+                  </ul>
+                  <div class="card-body m-auto">
+                    <a href="#" class="card-link agregar-carrito" data-id="7"
+                      >Comprar Ahora</a
+                    >
+                    <a href="#" class="card-link">Ver Más</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card">
+                  <img
+                    src="src/img/samsung.jpg"
+                    class="card-img-top"
+                    alt="laptop"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Samsung Liv Tactil</h5>
+                    <p class="card-text">
+                      Nuestra notebook más ligera y delgada vuelve completamente
+                      renovada por dentro.
+                    </p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Pantalla 10.6 Pulgadas</li>
+                    <li class="list-group-item">4GB DDR4 + 64GB SSD</li>
+                    <li class="list-group-item precio">
+                      Precio:<span>$89.000</span>
+                    </li>
+                  </ul>
+                  <div class="card-body m-auto">
+                    <a href="#" class="card-link agregar-carrito" data-id="8"
+                      >Comprar Ahora</a
+                    >
+                    <a href="#" class="card-link">Ver Más</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card">
+                  <img src="src/img/lg.jpg" class="card-img-top" alt="laptop" />
+                  <div class="card-body">
+                    <h5 class="card-title">LG Optimus G</h5>
+                    <p class="card-text">
+                      Nuestra notebook más ligera y delgada vuelve completamente
+                      renovada por dentro.
+                    </p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Pantalla 14.0 Pulgadas</li>
+                    <li class="list-group-item">8GB DDR4 + 256GB SSD</li>
+                    <li class="list-group-item precio">
+                      Precio:<span>$118.000</span>
+                    </li>
+                  </ul>
+                  <div class="card-body m-auto">
+                    <a href="#" class="card-link agregar-carrito" data-id="9"
+                      >Comprar Ahora</a
+                    >
                     <a href="#" class="card-link">Ver Más</a>
                   </div>
                 </div>
@@ -243,339 +373,7 @@
         </div>
       </div>
     </div>
-     <!-- Section  -->
-     <div class="section">
-      <div class="container py-5">
-        <div class="row text-center">
-          <h2>Celulares</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 m-auto">
-            <div class="row">
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/acer.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">acer predator helios300</h5>
-                    <p class="card-text">
-                      Comienza a jugar con todo lo que necesitas para arrasar a
-                      los rivales en una pantalla increíblemente.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 15.6 Pulgadas</li>
-                    <li class="list-group-item">16 GB DDR4 + 512GB SSD</li>
-                    <li class="list-group-item">Precio: $230.000</li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/dell.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Dell Latitude D455</h5>
-                    <p class="card-text">
-                      Comienza a jugar con todo lo que necesitas para arrasar a
-                      los rivales en una pantalla increíblemente.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 14 Pulgadas</li>
-                    <li class="list-group-item">8 GB DDR4 + 1TB DISCO</li>
-                    <li class="list-group-item">Precios: $130.000</li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/lenovo.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">lenovo thinkpad s345</h5>
-                    <p class="card-text">
-                      Comienza a jugar con todo lo que necesitas para arrasar a
-                      los rivales en una pantalla increíblemente.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 14 Pulgadas</li>
-                    <li class="list-group-item">4GB DDR4 + 1TB DISCO</li>
-                    <li class="list-group-item">Precio: $98.000</li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/advance.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">lenovo 2 en 1 X350</h5>
-                    <p class="card-text">
-                      Nuestra notebook más ligera y delgada vuelve completamente
-                      renovada por dentro.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 11.6 Pulgadas</li>
-                    <li class="list-group-item">3GB DDR3 + 32GB SSD</li>
-                    <li class="list-group-item">Precio: $75.000</li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/apple.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">MacBook Air M1</h5>
-                    <p class="card-text">
-                      Nuestra notebook más ligera y delgada vuelve completamente
-                      renovada por dentro.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 13.3 Pulgadas</li>
-                    <li class="list-group-item">8GB DDR4 + 128GB SSD</li>
-                    <li class="list-group-item">Precio: $190.000</li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/hp1.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">HP omen 15c24</h5>
-                    <p class="card-text">
-                      Nuestra notebook más ligera y delgada vuelve completamente
-                      renovada por dentro.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 13.3 Pulgadas</li>
-                    <li class="list-group-item">8GB DDR4 + 256GB SSD</li>
-                    <li class="list-group-item">Precio: $110.000</li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-     <!-- Section  -->
-    <div class="section">
-      <div class="container py-5">
-        <div class="row text-center">
-          <h2>Consolas</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 m-auto">
-            <div class="row">
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/acer.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">acer predator helios300</h5>
-                    <p class="card-text">
-                      Comienza a jugar con todo lo que necesitas para arrasar a
-                      los rivales en una pantalla increíblemente.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 15.6 Pulgadas</li>
-                    <li class="list-group-item">16 GB DDR4 + 512GB SSD</li>
-                    <li class="list-group-item">Precio: $230.000</li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/dell.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Dell Latitude D455</h5>
-                    <p class="card-text">
-                      Comienza a jugar con todo lo que necesitas para arrasar a
-                      los rivales en una pantalla increíblemente.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 14 Pulgadas</li>
-                    <li class="list-group-item">8 GB DDR4 + 1TB DISCO</li>
-                    <li class="list-group-item">Precios: $130.000</li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/lenovo.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">lenovo thinkpad s345</h5>
-                    <p class="card-text">
-                      Comienza a jugar con todo lo que necesitas para arrasar a
-                      los rivales en una pantalla increíblemente.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 14 Pulgadas</li>
-                    <li class="list-group-item">4GB DDR4 + 1TB DISCO</li>
-                    <li class="list-group-item">Precio: $98.000</li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/advance.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">lenovo 2 en 1 X350</h5>
-                    <p class="card-text">
-                      Nuestra notebook más ligera y delgada vuelve completamente
-                      renovada por dentro.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 11.6 Pulgadas</li>
-                    <li class="list-group-item">3GB DDR3 + 32GB SSD</li>
-                    <li class="list-group-item">Precio: $75.000</li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/apple.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">MacBook Air M1</h5>
-                    <p class="card-text">
-                      Nuestra notebook más ligera y delgada vuelve completamente
-                      renovada por dentro.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 13.3 Pulgadas</li>
-                    <li class="list-group-item">8GB DDR4 + 128GB SSD</li>
-                    <li class="list-group-item">Precio: $190.000</li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/hp1.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">HP omen 15c24</h5>
-                    <p class="card-text">
-                      Nuestra notebook más ligera y delgada vuelve completamente
-                      renovada por dentro.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 13.3 Pulgadas</li>
-                    <li class="list-group-item">8GB DDR4 + 256GB SSD</li>
-                    <li class="list-group-item">Precio: $110.000</li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link">Comprar Ahora</a>
-                    <a href="#" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
 
-    <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/0729072db7.js"
-      crossorigin="anonymous"
-    ></script>
     <!-- PopperJS -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -588,5 +386,8 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"
     ></script>
+    <!-- JS Local -->
+    <script src="src/js/carrito.js"></script>
+    <script src="src/js/compra.js"></script>
   </body>
 </html>

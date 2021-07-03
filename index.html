@@ -10,11 +10,24 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/0729072db7.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="src/style/style.css" />
     <title>E-Commerce</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav
+      class="
+        navbar
+        sticky-top
+        navbar-expand-lg navbar-light
+        bg-light
+        scrolling-navbar
+      "
+    >
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">My Store</a>
         <li class="nav-item dropdown">
@@ -28,7 +41,11 @@
           >
             <img src="src/img/cart.jpeg" alt="" />
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul
+            id="carrito"
+            class="dropdown-menu"
+            aria-labelledby="navbarDropdown"
+          >
             <table id="lista-carrito" class="table">
               <thead>
                 <tr>
@@ -57,7 +74,7 @@
           aria-controls="navbarSupportedContent"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+          <span class="navbar-toggler-icon bg-black"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav m-auto my-2 mb-lg-0">
@@ -292,15 +309,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/0729072db7.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- JS Local -->
-    <script src="src/js/carrito.js"></script>
-    <script src="src/js/compra.js"></script>
     <!-- <script src="src/js/swrich.js"></script> -->
 
     <!-- PopperJS -->
@@ -315,5 +323,8 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"
     ></script>
+    <!-- JS Local -->
+    <script src="src/js/carrito.js"></script>
+    <script src="src/js/compra.js"></script>
   </body>
 </html>
