@@ -34,6 +34,7 @@ class Carrito {
         </td>
         `;
         listaProductos.appendChild(row);
+        this.guardarProductosLocalStorage(producto);
     }
 
     eliminarProducto(e) {
@@ -54,5 +55,27 @@ class Carrito {
         }
         return false;
     }
-}
 
+    guardarProductosLocalStorage() {
+        let productos;
+        productos = this.obtenerProductosLocalStorage();
+        productos.push(producto);
+        localStorage.setItem('productos', JSON.stringify(productos));
+    }
+
+    obtenerProductosLocalStorage() {
+        let productoLS;
+
+        if (localStorage.getItem('productos') === null) {
+            productoLS = [];
+        }
+        else {
+            productoLS = JSON.parse(localStorage.getItem('productos');
+        }
+        return productoLS;
+
+    }
+
+
+
+}
