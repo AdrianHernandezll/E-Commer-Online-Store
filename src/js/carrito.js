@@ -23,17 +23,16 @@ class Carrito {
         productosLS = this.obtenerProductosLocalStorage();
         productosLS.forEach(function (productoLS) {
             if (productoLS.id === infoProducto.id) {
-                productosLS = productoLS.id;
+                productosLS * productoLS.id;
             }
         });
 
         if (productosLS === infoProducto.id) {
             Swal.fire({
-                type: 'info',
+                icon: 'error',
                 title: 'Oops...',
-                text: 'El producto ya está agregado',
-                showConfirmButton: false,
-                timer: 1000
+                text: 'Has agregado dos articulos iguales',
+                footer: '<a href="">Tienes Problemas?</a>'
             })
         }
         else {
@@ -50,7 +49,9 @@ class Carrito {
         </td>
         <td>${producto.titulo}</td>
         <td>${producto.precio}</td>
-        <td>${producto.cantidad}<td>
+        <td>
+            <input type="number" class="form-control" min="1" value=${producto.cantidad} >
+        <td>
         <td>
             <a href="#" class="borrar-producto far fa-times-circle" data-id="${producto.id}"></a>
         </td>
@@ -76,6 +77,7 @@ class Carrito {
         while (listaProductos.firstChild) {
             listaProductos.removeChild(listaProductos.firstChild);
         }
+        // this.vaciarCarrito();
         return false;
     }
 
@@ -127,6 +129,53 @@ class Carrito {
             listaProductos.appendChild(row);
 
         });
+    }
+
+    leerLocalStorageCompra() {
+        let productoLS;
+        productoLS = this.obtenerProductosLocalStorage();
+        productoLS.forEach(function (producto) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+        <td>
+            <img src="${producto.imagen}" width=100>
+        </td>
+        <td>${producto.titulo}</td>
+        <td>${producto.precio}</td>
+        <td>
+            <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}
+        </td>
+        <td>${producto.precio * producto.cantidad}</td>
+        <td>
+            <a href="#" class="borrar-producto far fa-times-circle" data-id="${producto.id}"></a>
+        </td>
+        `;
+            comprarProducto.appendChild(row);
+
+        });
+    }
+
+    //Eliminar todos los datos del LS
+    // vaciarLocalStorage() {
+    //     localStorage.clear();
+    // }
+
+    procesarPedido(e) {
+        e.preventDefault();
+        if (this.obtenerProductosLocalStorage().length === 0) {
+            Swal.fire({
+                icon: "warning",
+                type: 'info',
+                title: 'Oops...',
+                text: 'El carrito se encuentra vacio, agrega productos',
+                showConfirmButton: false,
+                timer: 3000
+            });
+        } else {
+            location.href = "nosotros.html"
+        }
+
+
     }
 
 }
