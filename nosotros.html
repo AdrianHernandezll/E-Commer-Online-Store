@@ -103,212 +103,89 @@
       </div>
     </nav>
     <!-- Main  -->
-    <div class="main">
+    <main>
       <div class="container">
-        <div class="row">
-          <div class="col-lg-7">
-            <h1>LA JUGADA DEFINITIVA</h1>
-            <p>
-              No puedes deshacer lo que ya has hecho, pero sí puedes
-              enfrentarlo.
-            </p>
-            <button class="btn1">Ver más</button>
-          </div>
-        </div>
-      </div>
-    </div>
+          <div class="row mt-3">
+              <div class="col">
+                  <h2 class="d-flex justify-content-center mb-3">Realizar Compra</h2>
+                  <form id="procesar-pago" action="#" method="post">
+                      <div class="form-group row">
+                          <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
+                          <div class="col-12 col-md-10">
+                              <input type="text" class="form-control" id="cliente"
+                                  placeholder="Ingresa nombre cliente" name="destinatario">
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="email" class="col-12 col-md-2 col-form-label h2">Correo :</label>
+                          <div class="col-12 col-md-10">
+                              <input type="text" class="form-control" id="correo" placeholder="Ingresa tu correo" name="cc_to">
+                          </div>
+                      </div>
 
-    <!-- Section  -->
-    <div class="section">
-      <div class="container py-5" id="lista-productos">
-        <div class="row text-center">
-          <h2>Productos</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 m-auto">
-            <div class="row">
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/acer.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">acer predator helios300</h5>
-                    <p class="card-text">
-                      Comienza a jugar con todo lo que necesitas para arrasar a
-                      los rivales en una pantalla increíblemente.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 15.6 Pulgadas</li>
-                    <li class="list-group-item">16 GB DDR4 + 512GB SSD</li>
-                    <li class="list-group-item precio">
-                      Precio:<span>$230.000</span>
-                    </li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link agregar-carrito" data-id="1"
-                      >Comprar Ahora</a
-                    >
-                    <a href="tienda.html" class="card-link">Ver Más</a>
-                  </div>
-                </div>
+                      <div id="carrito" class="form-group table-responsive" >
+                          <table class="table" id="lista-compra" >
+                              <thead>
+                                  <tr>
+                                      <th scope="col">Imagen</th>
+                                      <th scope="col">Nombre</th>
+                                      <th scope="col">Precio</th>
+                                      <th scope="col">Cantidad</th>
+                                      <th scope="col">Sub Total</th>
+                                      <th scope="col">Eliminar</th>
+                                  </tr>
+
+                              </thead>
+                              <tbody >
+
+                              </tbody>
+                              <tr>
+                                  <th colspan="4" scope="col" class="text-right">SUB TOTAL :</th>
+                                  <th scope="col">
+                                      <p id="subtotal"></p>
+                                  </th>
+                                  <!-- <th scope="col"></th> -->
+                              </tr>
+                              <tr>
+                                  <th colspan="4" scope="col" class="text-right">IGV :</th>
+                                  <th scope="col">
+                                      <p id="igv"></p>
+                                  </th>
+                                  <!-- <th scope="col"></th> -->
+                              </tr>
+                              <tr>
+                                  <th colspan="4" scope="col" class="text-right">TOTAL :</th>
+                                  <th scope="col">
+                                      <input id="total" name="monto" class="font-weight-bold border-0" readonly style="background-color: white;"></input>
+                                  </th>
+                                  <!-- <th scope="col"></th> -->
+                              </tr>
+
+                          </table>
+                      </div>
+
+                      <div class="row justify-content-center" id="loaders">
+                          <img id="cargando" src="img/cargando.gif" width="220">
+                      </div>
+
+                      <div class="row justify-content-between">
+                          <div class="col-md-4 mb-2">
+                              <a href="index.html" class="btn btn-info btn-block">Seguir comprando</a>
+                          </div>
+                          <div class="col-xs-12 col-md-4">
+                              <button href="#" class="btn btn-success btn-block" id="procesar-compra">Realizar compra</button>
+                          </div>
+                      </div>
+                  </form>
+
+
               </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/dell.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Dell Latitude D455</h5>
-                    <p class="card-text">
-                      Comienza a jugar con todo lo que necesitas para arrasar a
-                      los rivales en una pantalla increíblemente.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 14 Pulgadas</li>
-                    <li class="list-group-item">8 GB DDR4 + 1TB DISCO</li>
-                    <li class="list-group-item precio">
-                      Precio:<span>$130.000</span>
-                    </li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link agregar-carrito" data-id="2"
-                      >Comprar Ahora</a
-                    >
-                    <a href="tienda.html" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/lenovo.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">lenovo thinkpad s345</h5>
-                    <p class="card-text">
-                      Comienza a jugar con todo lo que necesitas para arrasar a
-                      los rivales en una pantalla increíblemente.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 14 Pulgadas</li>
-                    <li class="list-group-item">4GB DDR4 + 1TB DISCO</li>
-                    <li class="list-group-item precio">
-                      Precio:<span>$98.000</span>
-                    </li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link agregar-carrito" data-id="3"
-                      >Comprar Ahora</a
-                    >
-                    <a href="tienda.html" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/advance.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">lenovo 2 en 1 X350</h5>
-                    <p class="card-text">
-                      Nuestra notebook más ligera y delgada vuelve completamente
-                      renovada por dentro.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 11.6 Pulgadas</li>
-                    <li class="list-group-item">3GB DDR3 + 32GB SSD</li>
-                    <li class="list-group-item precio">
-                      Precio:<span>$75.000</span>
-                    </li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link agregar-carrito" data-id="4"
-                      >Comprar Ahora</a
-                    >
-                    <a href="tienda.html" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/apple.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">MacBook Air M1</h5>
-                    <p class="card-text">
-                      Nuestra notebook más ligera y delgada vuelve completamente
-                      renovada por dentro.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 13.3 Pulgadas</li>
-                    <li class="list-group-item">8GB DDR4 + 128GB SSD</li>
-                    <li class="list-group-item precio">
-                      Precio:<span>$190.000</span>
-                    </li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a
-                      href="tienda.html"
-                      class="card-link agregar-carrito"
-                      data-id="5"
-                      >Comprar Ahora</a
-                    >
-                    <a href="tienda.html" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card">
-                  <img
-                    src="src/img/hp1.jpg"
-                    class="card-img-top"
-                    alt="laptop"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">HP omen 15c24</h5>
-                    <p class="card-text">
-                      Nuestra notebook más ligera y delgada vuelve completamente
-                      renovada por dentro.
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Pantalla 13.3 Pulgadas</li>
-                    <li class="list-group-item">8GB DDR4 + 256GB SSD</li>
-                    <li class="list-group-item precio">
-                      Precio:<span>$110.000</span>
-                    </li>
-                  </ul>
-                  <div class="card-body m-auto">
-                    <a href="#" class="card-link agregar-carrito" data-id="6"
-                      >Comprar Ahora</a
-                    >
-                    <a href="tienda.html" class="card-link">Ver Más</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+
           </div>
-        </div>
+
       </div>
-    </div>
+  </main>
     <!-- <script src="src/js/swrich.js"></script> -->
 
     <!-- PopperJS -->
