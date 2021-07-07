@@ -144,3 +144,10 @@ body {
 .table tbody td a:hover {
   color: rgba(255, 0, 0, 0.459);
 }
+
+/* Cargando  */
+
+#cargando{
+  width: 140px;
+  display: none;
+}

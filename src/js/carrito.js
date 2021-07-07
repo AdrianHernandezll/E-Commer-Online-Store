@@ -77,7 +77,6 @@ class Carrito {
         while (listaProductos.firstChild) {
             listaProductos.removeChild(listaProductos.firstChild);
         }
-        // this.vaciarCarrito();
         return false;
     }
 
@@ -159,9 +158,9 @@ class Carrito {
    
 
     //Eliminar todos los datos del LS
-    // vaciarLocalStorage() {
-    //     localStorage.clear();
-    // }
+     vaciarLocalStorage() {
+         localStorage.clear();
+     }
 
     procesarPedido(e) {
         e.preventDefault();

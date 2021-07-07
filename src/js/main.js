@@ -51,7 +51,7 @@ function procesarCompra(e){
             window.location = "index.html"
         })
     }
-    else if(client.value === '' || correo.value === ''){
+    else if(cliente.value === '' || correo.value === ''){
         Swal.fire({
             icon: "warning",
             type: 'error',
@@ -61,7 +61,24 @@ function procesarCompra(e){
             timer: 3000
         });
     }else{
-        
+        const cargandoGif = document.querySelector('#cargando');
+        cargandoGif.style.display = "block";
+
+        const enviado = document.createElement('IMG');
+        enviado.src ="src/img/mail.gif";
+        enviado.style.display = "block";
+        enviado.style.width = "150px";
+
+        setTimeout(() =>{
+            cargandoGif.style.display = 'none';
+            document.querySelector('#loaders').appendChild(enviado);
+            setTimeout(() =>{
+                enviado.remove();
+                compra.vaciarLocalStorage();
+                window.location = "index.html";
+            })
+        }, 3000);
+
     }
 }
 
