@@ -53,7 +53,6 @@ class Carrito {
             <td>
                 <a href="#" class="borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
             </td>
-            <td>${producto.cantidad}</td>
         `;
         listaProductos.appendChild(row);
         this.guardarProductosLocalStorage(producto);
@@ -70,7 +69,7 @@ class Carrito {
 
         }
         this.elliminarProductoLocalStorage(productoID);
-        this.vaciarLocalStorage();
+        this.calcularTotal();
 
     }
 
@@ -127,6 +126,7 @@ class Carrito {
                 <td>
                     <a href="#" class="borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
                 </td>
+                <td>${producto.cantidad}</td>
             `;
             listaProductos.appendChild(row);
         });
@@ -147,6 +147,7 @@ class Carrito {
                 <td>
                     <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
                 </td>
+                <td id='subtotales'>${producto.precio * producto.cantidad}</td>
                 <td>
                     <a href="#" class="borrar-producto fas fa-times-circle" style="font-size:30px" data-id="${producto.id}"></a>
                 </td>
@@ -194,6 +195,29 @@ class Carrito {
         document.getElementById("subtotal").innerHTML = "$ " + subtotal;
         document.getElementById("iva").innerHTML = "$ " + iva;
         document.getElementById('total').innerHTML = "$ " + total.toFixed(2);
+    }
+
+    obtenerEvento(e) {
+        e.preventDefault();
+        let id, cantidad, producto, productosLS;
+        if (e.target.classList.contains('cantidad')) {
+            producto = e.target.parentElement.parentElement;
+            id = producto.querySelector('a').getAttribute('data-id');
+            cantidad = producto.querySelector('input').value;
+            let actualizarMontos = document.querySelectorAll('#subtotales');
+            productosLS = this.obtenerProductosLocalStorage();
+            productosLS.forEach(function (productoLS, index) {
+                if (productoLS.id === id) {
+                    productoLS.cantidad = cantidad;
+                    actualizarMontos[index].innerHTML = Number(cantidad * productosLS[index].precio);
+                }
+            });
+            localStorage.setItem('productos', JSON.stringify(productosLS));
+
+        }
+        else {
+            console.log("click afuera");
+        }
     }
 
 }

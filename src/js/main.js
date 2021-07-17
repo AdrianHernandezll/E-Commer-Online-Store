@@ -22,24 +22,26 @@ const compra = new Carrito();
 const listaCompra = document.querySelector("#lista-compra tbody");
 const carrito = document.getElementById('carrito');
 const procesarCompraBtn = document.getElementById('procesar-compra');
+const cliente = document.getElementById('cliente');
+const correo = document.getElementById('correo');
 
 cargarEventos();
 
-function cargarEventos(){
-    
+function cargarEventos() {
+
     document.addEventListener('DOMContentLoaded', compra.leerLocalStorageCompra());
 
-    carrito.addEventListener('click', (e)=>{compra.eliminarProducto(e)});
+    carrito.addEventListener('click', (e) => { compra.eliminarProducto(e) });
 
     compra.calcularTotal();
 
     procesarCompraBtn.addEventListener('click', procesarCompra);
 }
 
-function procesarCompra(e){
+function procesarCompra(e) {
     e.preventDefault();
 
-    if(compra.obtenerProductosLocalStorage().length === 0){
+    if (compra.obtenerProductosLocalStorage().length === 0) {
         Swal.fire({
             icon: "warning",
             type: 'error',
@@ -47,11 +49,11 @@ function procesarCompra(e){
             text: 'No hay productos en el carrito',
             showConfirmButton: false,
             timer: 3000
-        }).then(function(){
+        }).then(function () {
             window.location = "index.html"
         })
     }
-    else if(cliente.value === '' || correo.value === ''){
+    else if (cliente.value === '' || correo.value === '') {
         Swal.fire({
             icon: "warning",
             type: 'error',
@@ -60,19 +62,19 @@ function procesarCompra(e){
             showConfirmButton: false,
             timer: 3000
         });
-    }else{
+    } else {
         const cargandoGif = document.querySelector('#cargando');
         cargandoGif.style.display = "block";
 
         const enviado = document.createElement('IMG');
-        enviado.src ="src/img/mail.gif";
+        enviado.src = "src/img/mail.gif";
         enviado.style.display = "block";
         enviado.style.width = "150px";
 
-        setTimeout(() =>{
+        setTimeout(() => {
             cargandoGif.style.display = 'none';
             document.querySelector('#loaders').appendChild(enviado);
-            setTimeout(() =>{
+            setTimeout(() => {
                 enviado.remove();
                 compra.vaciarLocalStorage();
                 window.location = "index.html";
