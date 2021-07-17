@@ -53,6 +53,7 @@ class Carrito {
             <td>
                 <a href="#" class="borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
             </td>
+            <td>${producto.cantidad}</td>
         `;
         listaProductos.appendChild(row);
         this.guardarProductosLocalStorage(producto);
@@ -69,7 +70,7 @@ class Carrito {
 
         }
         this.elliminarProductoLocalStorage(productoID);
-        this.calcularTotal();
+        this.vaciarLocalStorage();
 
     }
 
@@ -110,8 +111,8 @@ class Carrito {
         localStorage.setItem('productos', JSON.stringify(productosLS))
     };
 
-     //Mostrar los productos guardados en el LS
-     leerLocalStorage() {
+    //Mostrar los productos guardados en el LS
+    leerLocalStorage() {
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
         productosLS.forEach(function (producto) {
@@ -131,8 +132,8 @@ class Carrito {
         });
     }
 
-     //Mostrar los productos guardados en el LS en compra.html
-     leerLocalStorageCompra() {
+    //Mostrar los productos guardados en el LS en compra.html
+    leerLocalStorageCompra() {
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
         productosLS.forEach(function (producto) {
@@ -146,7 +147,6 @@ class Carrito {
                 <td>
                     <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
                 </td>
-                <td id='subtotales'>${producto.precio * producto.cantidad}</td>
                 <td>
                     <a href="#" class="borrar-producto fas fa-times-circle" style="font-size:30px" data-id="${producto.id}"></a>
                 </td>
@@ -155,12 +155,12 @@ class Carrito {
         });
     }
 
-   
+
 
     //Eliminar todos los datos del LS
-     vaciarLocalStorage() {
-         localStorage.clear();
-     }
+    vaciarLocalStorage() {
+        localStorage.clear();
+    }
 
     procesarPedido(e) {
         e.preventDefault();
@@ -180,16 +180,16 @@ class Carrito {
 
     } i
 
-    calcularTotal(){
+    calcularTotal() {
         let productoLS;
         let total = 0, subtotal = 0, iva = 0;
         productoLS = this.obtenerProductosLocalStorage();
-        for(let i = 0; i < productoLS.length;i++){
+        for (let i = 0; i < productoLS.length; i++) {
             let elemento = Number(productoLS[i].precio * productoLS[i].cantidad);
             total = total + elemento;
         }
         iva = parseFloat(total * 0.21).toFixed(2);
-        subtotal = parseFloat(total-iva).toFixed(2);
+        subtotal = parseFloat(total - iva).toFixed(2);
 
         document.getElementById("subtotal").innerHTML = "$ " + subtotal;
         document.getElementById("iva").innerHTML = "$ " + iva;
