@@ -53,6 +53,7 @@ class Carrito {
             <td>
                 <a href="#" class="borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
             </td>
+            <td>${producto.cantidad}</td>
         `;
         listaProductos.appendChild(row);
         this.guardarProductosLocalStorage(producto);
@@ -69,7 +70,7 @@ class Carrito {
 
         }
         this.elliminarProductoLocalStorage(productoID);
-        this.calcularTotal();
+
 
     }
 
@@ -77,6 +78,8 @@ class Carrito {
         while (listaProductos.firstChild) {
             listaProductos.removeChild(listaProductos.firstChild);
         }
+        this.vaciarLocalStorage();
+
         return false;
     }
 
