@@ -147,7 +147,20 @@ body {
 
 /* Cargando  */
 
-#cargando{
+#cargando {
   width: 140px;
   display: none;
+}
+
+/* ------------------FOOOTERRR------------------- */
+
+.footer {
+  background-color: #000000ce;
+}
+.footer a {
+  color: #eeeeee;
+  transition: all 0.5s ease;
+}
+.footer a:hover {
+  color: #eeeeee9d;
 }
