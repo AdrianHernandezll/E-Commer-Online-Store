@@ -78,8 +78,8 @@ function procesarCompra(e) {
                 enviado.remove();
                 compra.vaciarLocalStorage();
                 window.location = "index.html";
-            })
-        }, 6000);
+            }, 3000);
+        }, 3000);
 
     }
 }
