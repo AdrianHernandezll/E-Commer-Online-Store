@@ -156,6 +156,8 @@ body {
 
 .footer {
   background-color: #000000ce;
+  min-height: 30vh;
+  margin-top: 200px;
 }
 .footer a {
   color: #eeeeee;
