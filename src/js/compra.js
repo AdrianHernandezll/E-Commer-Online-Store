@@ -23,7 +23,6 @@ function cargarEventos() {
 
 }
 
-
 $(document).ready(function () {
     const APIURL = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
 
