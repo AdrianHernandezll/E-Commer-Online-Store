@@ -5,6 +5,7 @@ class Carrito {
         e.preventDefault();
         if (e.target.classList.contains('agregar-carrito')) {
             const producto = e.target.parentElement.parentElement;
+            //Enviamos el producto seleccionado para tomar sus datos
             this.leerDatosProducto(producto);
             // console.log(producto);
         }
@@ -27,6 +28,7 @@ class Carrito {
             }
         });
 
+
         if (productosLS === infoProducto.id) {
             Swal.fire({
                 type: 'info',
@@ -34,7 +36,8 @@ class Carrito {
                 text: 'El producto ya está agregado',
                 showConfirmButton: false,
                 timer: 1000
-            })
+            });
+
         }
         else {
             this.insertarCarrito(infoProducto);
@@ -49,11 +52,11 @@ class Carrito {
                 <img src="${producto.imagen}" width=100>
             </td>
             <td>${producto.titulo}</td>
-            <td>${producto.precio}</td>
+            <td>$${producto.precio}</td>
             <td>
                 <a href="#" class="borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
             </td>
-            <td>${producto.cantidad}</td>
+            
         `;
         listaProductos.appendChild(row);
         this.guardarProductosLocalStorage(producto);
@@ -70,8 +73,7 @@ class Carrito {
 
         }
         this.elliminarProductoLocalStorage(productoID);
-
-
+        this.calcularTotal();
     }
 
     vaciarCarrito(e) {
@@ -85,8 +87,12 @@ class Carrito {
 
     guardarProductosLocalStorage(producto) {
         let productos;
+        //Toma valor de un arreglo con datos del LS
         productos = this.obtenerProductosLocalStorage();
+        //Agregar el producto al carrito
         productos.push(producto);
+        //Agregamos al LS
+
         localStorage.setItem('productos', JSON.stringify(productos));
     }
 
@@ -101,18 +107,6 @@ class Carrito {
         return productoLS;
 
     }
-
-    elliminarProductoLocalStorage(productoID) {
-        let productosLS;
-        productosLS = this.obtenerProductosLocalStorage();
-        productosLS.forEach(function (productoLS, index) {
-            if (productoLS.id === productoID) {
-                productosLS.splice(index, 1);
-            }
-        });
-        localStorage.setItem('productos', JSON.stringify(productosLS))
-    };
-
     //Mostrar los productos guardados en el LS
     leerLocalStorage() {
         let productosLS;
@@ -121,15 +115,15 @@ class Carrito {
             //Construir plantilla
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>
-                    <img src="${producto.imagen}" width=100>
-                </td>
-                <td>${producto.titulo}</td>
-                <td>${producto.precio}</td>
-                <td>
-                    <a href="#" class="borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
-                </td>
-                <td>${producto.cantidad}</td>
+            <td>
+                <img src="${producto.imagen}" width=100>
+            </td>
+            <td>${producto.titulo}</td>
+            <td>${producto.precio}</td>
+             <td>
+                <a href="#" class="borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
+            </td>
+                
             `;
             listaProductos.appendChild(row);
         });
@@ -142,24 +136,33 @@ class Carrito {
         productosLS.forEach(function (producto) {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>
-                    <img src="${producto.imagen}" width=100>
-                </td>
-                <td>${producto.titulo}</td>
-                <td>${producto.precio}</td>
-                <td>
-                    <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
-                </td>
+            <td>
+                <img src="${producto.imagen}" width=100>
+            </td>
+            <td>${producto.titulo}</td>
+            <td>${producto.precio}</td>
+            <td>
+                <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
+            </td>
                 <td id='subtotales'>${producto.precio * producto.cantidad}</td>
-                <td>
-                    <a href="#" class="borrar-producto fas fa-times-circle" style="font-size:30px" data-id="${producto.id}"></a>
-                </td>
+            <td>
+                <a href="#" class="borrar-producto fas fa-times-circle" style="font-size:30px" data-id="${producto.id}"></a>
+            </td>
             `;
             listaCompra.appendChild(row);
         });
     }
 
-
+    elliminarProductoLocalStorage(productoID) {
+        let productosLS;
+        productosLS = this.obtenerProductosLocalStorage();
+        productosLS.forEach(function (productoLS, index) {
+            if (productoLS.id === productoID) {
+                productosLS.splice(index, 1);
+            }
+        });
+        localStorage.setItem('productos', JSON.stringify(productosLS))
+    };
 
     //Eliminar todos los datos del LS
     vaciarLocalStorage() {
@@ -182,22 +185,24 @@ class Carrito {
         }
 
 
-    } i
-
+    }
+    //Calcular montos
     calcularTotal() {
-        let productoLS;
-        let total = 0, subtotal = 0, iva = 0;
-        productoLS = this.obtenerProductosLocalStorage();
-        for (let i = 0; i < productoLS.length; i++) {
-            let elemento = Number(productoLS[i].precio * productoLS[i].cantidad);
-            total = total + elemento;
+        let productosLS;
+        let total = 0, iva = 0, subtotal = 0;
+        productosLS = this.obtenerProductosLocalStorage();
+        for (let i = 0; i < productosLS.length; i++) {
+            let element = Number(productosLS[i].precio * productosLS[i].cantidad);
+            total = total + element;
+
         }
-        iva = parseFloat(total * 0.21).toFixed(2);
+
+        iva = parseFloat(total * 0.18).toFixed(2);
         subtotal = parseFloat(total - iva).toFixed(2);
 
-        document.getElementById("subtotal").innerHTML = "$ " + subtotal;
-        document.getElementById("iva").innerHTML = "$ " + iva;
-        document.getElementById('total').innerHTML = "$ " + total.toFixed(2);
+        document.getElementById('subtotal').innerHTML = "$ " + subtotal;
+        document.getElementById('iva').innerHTML = "$" + iva;
+        document.getElementById('total').value = "$" + total.toFixed(2);
     }
 
     obtenerEvento(e) {
