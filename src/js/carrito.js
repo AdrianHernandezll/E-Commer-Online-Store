@@ -232,4 +232,8 @@ class Carrito {
         }
     }
 
+    btnWhatsapp() {
+        document.createElement('a')
+    }
+
 }
