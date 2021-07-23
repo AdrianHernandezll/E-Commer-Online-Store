@@ -4,7 +4,7 @@ const productos = document.getElementById('lista-productos');
 const listaProductos = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
 const procesarPedidoBtn = document.getElementById('procesar-pedido');
-const enviosBtn = document.getElementById('btn-enviar').setAttribute('target', '_blank');
+const enviosBtn = document.getElementById('btn-enviar').setAttribute('target', '_blank')
 
 
 cargarEventos();
@@ -22,10 +22,6 @@ function cargarEventos() {
     procesarPedidoBtn.addEventListener('click', (e) => { carro.procesarPedido(e) });
 
 }
-
-
-
-enviosBtn.addEventListener("click", enviarBtn);
 
 
 $(document).ready(function () {
