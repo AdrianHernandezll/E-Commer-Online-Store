@@ -4,7 +4,7 @@ const productos = document.getElementById('lista-productos');
 const listaProductos = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
 const procesarPedidoBtn = document.getElementById('procesar-pedido');
-
+const enviosBtn = document.getElementById('btn-enviar').setAttribute('target', '_blank');
 
 
 cargarEventos();
@@ -20,7 +20,13 @@ function cargarEventos() {
     document.addEventListener('DOMContentLoaded', carro.leerLocalStorage());
     //Enviar pedido a otra pagina
     procesarPedidoBtn.addEventListener('click', (e) => { carro.procesarPedido(e) });
+
 }
+
+
+
+enviosBtn.addEventListener("click", enviarBtn);
+
 
 $(document).ready(function () {
     const APIURL = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
