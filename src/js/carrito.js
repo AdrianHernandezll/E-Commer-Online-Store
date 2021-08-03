@@ -57,6 +57,7 @@ class Carrito {
             </td>
         `;
         listaProductos.appendChild(row);
+        row.classList.add("w-auto");
         this.guardarProductosLocalStorage(producto);
 
     }

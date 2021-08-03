@@ -31,6 +31,9 @@ body {
   outline: none;
   border: 2px solid #76d300;
 }
+.dropdown-menu[data-bs-popper] {
+  left: -100px;
+}
 
 .btn0 {
   height: 40px;
