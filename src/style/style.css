@@ -16,18 +16,14 @@ body {
 .nav-link {
   margin-right: 10px;
   margin-left: 10px;
-  color: black;
   text-transform: uppercase;
   display: inline;
+  font-size: 20px;
+  font-weight: bold;
 }
 .nav-link img {
   width: 40px;
 }
-.nav-link .nav-link:hover {
-  color: #cbff6af1;
-  transition: all 0.5s;
-}
-
 .search {
   height: 40px;
   width: 80%;
