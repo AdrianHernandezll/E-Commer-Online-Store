@@ -32,8 +32,6 @@ $(document).ready(function () {
         url: APIURL,
         dataType: "json",
         success: function (data) {
-            // console.log("Data que retorna el dolar :");
-            // console.log(data);
             myArray = data[1].casa;
             myArray2 = data[0].casa;
             const row = `

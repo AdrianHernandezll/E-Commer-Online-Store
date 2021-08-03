@@ -7,7 +7,7 @@ class Carrito {
             const producto = e.target.parentElement.parentElement;
             //Enviamos el producto seleccionado para tomar sus datos
             this.leerDatosProducto(producto);
-            // console.log(producto);
+
         }
     }
 
@@ -128,7 +128,7 @@ class Carrito {
         });
     }
 
-    //Mostrar los productos guardados en el LS en compra.html
+    //Mostrar los productos guardados en el LS
     leerLocalStorageCompra() {
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
