@@ -37,6 +37,9 @@ h2 {
 .dropdown-menu[data-bs-popper] {
   left: -100px;
 }
+.btn {
+  font-weight: bold;
+}
 
 .btn0 {
   height: 40px;
@@ -111,7 +114,9 @@ h2 {
   transform: scale(1.04);
   transform: translateY(-1);
   transition: all 0.4s ease;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 9px -1px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 0px 9px -1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 9px -1px rgba(0, 0, 0, 1);
 }
 .card img {
   border-radius: 1rem;
@@ -202,6 +207,17 @@ h2 {
 /* ----------NEWSSSS --------------*/
 .news {
   background-color: #eeeeee;
+}
+.btn-compra a {
+  font-weight: bold;
+}
+
+.btn-compras {
+  background-color: #76d300;
+  font-weight: bold;
+  border: none;
+}
+.btn-reservas {
 }
 
 /* ------------------FOOOTERRR------------------- */
