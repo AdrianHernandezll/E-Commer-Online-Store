@@ -8,6 +8,9 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
+h2 {
+  color: #76d300;
+}
 /*----------- NavBar Responsive--------------- */
 .navbar-brand {
   font-size: 2rem;
@@ -86,8 +89,7 @@ body {
 /* SECTION CARDS */
 
 .section {
-  background-color: #000000;
-  background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23463f51' fill-opacity='0.77'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-color: #eeeeee;
 }
 .section h2 {
   color: #76d300;
@@ -95,10 +97,22 @@ body {
 
 /* ------------CARDS-------------- */
 .card {
+  /* backdrop-filter: blur(0.4rem); */
   margin-top: 20px;
-  background: #eeeeee;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(1.04);
+  transform: translateY(-1);
+  transition: all 0.4s ease;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.card img {
+  border-radius: 1rem;
 }
 .card-body h5 {
+  text-align: center;
   text-transform: capitalize;
   font-weight: bold;
   color: #76d300;
@@ -109,21 +123,25 @@ body {
 }
 .card-body a {
   text-decoration: none;
-  color: #ffffff;
+  color: #eeeeee;
   background: #76d300;
   padding: 12px 15px;
   border: none;
   border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.4s ease-in-out;
 }
 .card-body a:hover {
-  background: #cbff6af1;
+  background: #a3da3d;
 }
 .list-group-flush {
-  background: rgba(0, 0, 0, 0.171);
+  border: none;
 }
 
 .list-group-flush .list-group-item {
-  background: #eeeeee;
+  border: none;
+  text-align: center;
+  font-weight: bold;
 }
 .list-group-flush a {
   font-weight: bold;
@@ -174,6 +192,11 @@ body {
   text-decoration: none;
   color: #0df053;
   background: #fff;
+}
+
+/* ----------NEWSSSS --------------*/
+.news {
+  background-color: #eeeeee;
 }
 
 /* ------------------FOOOTERRR------------------- */
