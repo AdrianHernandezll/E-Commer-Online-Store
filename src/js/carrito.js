@@ -47,6 +47,7 @@ class Carrito {
     insertarCarrito(producto) {
         const row = document.createElement('tr');
         row.innerHTML = `
+            <td class="text-center">${producto.cantidad}</td>
             <td>
                 <img src="${producto.imagen}" width=100>
             </td>
